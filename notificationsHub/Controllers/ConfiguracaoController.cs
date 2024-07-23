@@ -1,5 +1,5 @@
 ﻿using Domain.DTOs;
-using Domain.Interfaces;
+using Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 

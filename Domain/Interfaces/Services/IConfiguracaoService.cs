@@ -1,6 +1,6 @@
 ﻿using Domain.DTOs;
 
-namespace Domain.Interfaces
+namespace Domain.Interfaces.Services
 {
     public interface IConfiguracaoService
     {
