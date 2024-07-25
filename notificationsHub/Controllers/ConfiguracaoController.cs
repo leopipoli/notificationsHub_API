@@ -21,7 +21,7 @@ namespace Apresentacao.Controllers
         {
             try
             {
-                return Ok(_configuracaoService.GetAll());
+                return Ok(await _configuracaoService.GetAll());
             }
             catch (ArgumentException ex)
             {
@@ -30,11 +30,11 @@ namespace Apresentacao.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> ObterConfiguracaoPorId(int idConfiguracao)
+        public async Task<ActionResult> ObterConfiguracaoPorId(int id)
         {
             try
             {
-                return Ok(_configuracaoService.GetById(idConfiguracao));
+                return Ok(await _configuracaoService.GetById(id));
             }
             catch (ArgumentException ex)
             {

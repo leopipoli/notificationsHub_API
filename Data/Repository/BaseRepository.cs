@@ -16,6 +16,18 @@ namespace Data.Repository
 
         protected IDbConnection DbConnection => _dbConnection;
 
+        public async Task<IEnumerable<T>> SelectAll<T>(string query)
+        {
+            try
+            {
+                return await _dbConnection.QueryAsync<T>(query);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public async Task<int> InsertAndGetIdAsync(string query, object parameters = null)
         {
             try
@@ -28,11 +40,11 @@ namespace Data.Repository
             }
         }
 
-        public async Task<int> ExecuteAsync(string query, object parameters = null)
+        public async Task<T> SelectById<T>(string query, object parameters = null)
         {
             try
             {
-                return await _dbConnection.ExecuteAsync(query, parameters);
+                return await _dbConnection.QuerySingleOrDefaultAsync<T>(query, parameters);
             }
             catch (Exception ex)
             {

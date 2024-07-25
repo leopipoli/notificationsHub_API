@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using Data.Scripts;
+using Domain.DTOs.Configuracao;
 using Domain.Entities;
 using Domain.Interfaces.Repository;
 
@@ -10,13 +12,28 @@ namespace Data.Repository
         {
         }
 
+        public async Task<IEnumerable<ConfiguracaoDto>> SelectAll()
+        {
+            return await SelectAll<ConfiguracaoDto>(ConfiguracaoScripts.SelectAll());
+        }
+
+        public async Task<ConfiguracaoDto> SelectById(int id)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@id", id);
+
+            return await SelectById<ConfiguracaoDto>(ConfiguracaoScripts.SelectByIdConfiguracao(), parameters);
+        }
+
         public async Task<int> InsertAsync(ConfiguracaoEntity entity)
         {
-            var sql = @"INSERT INTO Configuracao (NomeAplicativo, SetupWeb, SetupEmail, SetupSMS) 
-                        VALUES (@NomeAplicativo, @SetupWeb, @SetupEmail, @SetupSMS);
-                        SELECT CAST(SCOPE_IDENTITY() as int);";
+            var parameters = new DynamicParameters();
+            parameters.Add("@NomeAplicativo", entity.NomeAplicativo);
+            parameters.Add("@SetupWeb", entity.SetupWeb);
+            parameters.Add("@SetupEmail", entity.SetupEmail);
+            parameters.Add("@SetupSMS", entity.SetupSMS);
 
-            return await InsertAndGetIdAsync(sql, entity);
+            return await InsertAndGetIdAsync(ConfiguracaoScripts.InsertConfiguracao(), entity);
         }
     }
 }

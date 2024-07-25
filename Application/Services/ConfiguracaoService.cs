@@ -19,14 +19,14 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public async Task<List<ConfiguracaoDto>> GetAll()
+        public async Task<IEnumerable<ConfiguracaoDto>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _configuracaoRepository.SelectAll();
         }
 
-        public async Task<ConfiguracaoDto> GetById(int idConfiguracao)
+        public async Task<ConfiguracaoDto> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _configuracaoRepository.SelectById(id);
         }
 
         public async Task<int> Post(ConfiguracaoDto configuracaoDto)
