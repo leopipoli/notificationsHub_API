@@ -1,10 +1,12 @@
-﻿using Domain.DTOs;
+﻿using Domain.DTOs.Configuracao;
 
 namespace Domain.Interfaces.Services
 {
     public interface IConfiguracaoService
     {
-        Task<ConfiguracaoDto> Post(ConfiguracaoDto user);
+        Task<List<ConfiguracaoDto>> GetAll();
+        Task<ConfiguracaoDto> GetById(int idConfiguracao);
+        Task<int> Post(ConfiguracaoDto user);
     }
 }
 

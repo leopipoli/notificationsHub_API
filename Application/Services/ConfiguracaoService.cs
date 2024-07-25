@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Domain.DTOs;
+using Domain.DTOs.Configuracao;
 using Domain.Entities;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Services;
@@ -19,12 +19,20 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public Task<ConfiguracaoDto> Post(ConfiguracaoDto configuracao)
+        public async Task<List<ConfiguracaoDto>> GetAll()
         {
-            var model = _mapper.Map<ConfiguracaoEntity>(configuracao);
-            var entity = _mapper.Map<ConfiguracaoEntity>(model);
-            var result = await _configuracaoRepository.InsertAsync(entity);
-            return _mapper.Map<ConfiguracaoDto>(result);
+            throw new NotImplementedException();
+        }
+
+        public async Task<ConfiguracaoDto> GetById(int idConfiguracao)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<int> Post(ConfiguracaoDto configuracaoDto)
+        {
+            var model = _mapper.Map<ConfiguracaoEntity>(configuracaoDto);
+            return await _configuracaoRepository.InsertAsync(model);
         }
     }
 }

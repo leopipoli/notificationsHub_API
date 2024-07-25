@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Domain.DTOs.SetupWeb;
+using Domain.Entities;
 
 namespace CrossCutting.Mappings
 {

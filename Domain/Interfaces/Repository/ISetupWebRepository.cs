@@ -1,6 +1,6 @@
 ﻿namespace Domain.Interfaces.Repository
 {
-    public interface ISetupEmailRepository
+    public interface ISetupWebRepository
     {
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Application.Services
 {
-    public class SetupEmailService : ISetupEmailService
+    public class SetupSMSService : ISetupSMSService
     {
     }
 }

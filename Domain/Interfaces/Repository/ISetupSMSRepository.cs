@@ -1,6 +1,6 @@
 ﻿namespace Domain.Interfaces.Repository
 {
-    public class ISetupWebServiceRepository
+    public interface ISetupSMSRepository
     {
     }
 }
