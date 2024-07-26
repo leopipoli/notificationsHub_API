@@ -18,15 +18,10 @@ namespace CrossCutting.DependencyInjection
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
             // Registra o repositório com a string de conexão
-            serviceCollection.AddScoped<IConfiguracaoRepository>(provider =>
-                new ConfiguracaoRepository(connectionString));
-
-            //serviceCollection.AddScoped<IConfiguracaoRepository, ConfiguracaoRepository>();
-            //serviceCollection.AddScoped<ISetupEmailRepository, SetupEmailRepository>();
-            //serviceCollection.AddScoped<ISetupWebRepository, SetupWebRepository>();
-            //serviceCollection.AddScoped<ISetupSMSRepository, SetupSMSRepository>();
-
-    
+            serviceCollection.AddScoped<IConfiguracaoRepository>(provider => new ConfiguracaoRepository(connectionString));
+            serviceCollection.AddScoped<ISetupEmailRepository>(provider => new SetupEmailRepository(connectionString));
+            serviceCollection.AddScoped<ISetupWebRepository>(provider => new SetupWebRepository(connectionString));
+            serviceCollection.AddScoped<ISetupSMSRepository>(provider => new SetupSMSRepository(connectionString));
         }
     }
 }

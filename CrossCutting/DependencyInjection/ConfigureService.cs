@@ -9,9 +9,9 @@ namespace CrossCutting.DependencyInjection
         public static void ConfigureDependenciesService(IServiceCollection serviceCollection)
         {
             serviceCollection.AddTransient<IConfiguracaoService, ConfiguracaoService>();
-            //serviceCollection.AddTransient<ISetupWebService, SetupWebService>();
-            //serviceCollection.AddTransient<ISetupEmailService, SetupEmailService>();
-            //serviceCollection.AddTransient<ISetupSMSService, SetupSMSService>();
+            serviceCollection.AddTransient<ISetupWebService, SetupWebService>();
+            serviceCollection.AddTransient<ISetupEmailService, SetupEmailService>();
+            serviceCollection.AddTransient<ISetupSMSService, SetupSMSService>();
         }
     }
 }
