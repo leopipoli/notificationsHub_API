@@ -24,7 +24,6 @@ namespace Data.Repository
         {
             var parameters = new DynamicParameters();
 
-            parameters.Add("@IdSetupEmail", entity.IdSetupEmail);
             parameters.Add("@IdConfiguracao", entity.IdConfiguracao);
             parameters.Add("@NomeServidorSMTP", entity.NomeServidorSMTP);
             parameters.Add("@PortaEnvio", entity.PortaEnvio);

@@ -12,10 +12,10 @@ namespace Data.Repository
         {
         }
 
-        public async Task<SetupWebDto> SelectById(int id)
+        public async Task<SetupWebDto> SelectById(int idConfiguracao)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@id", id);
+            parameters.Add("@idConfiguracao", idConfiguracao);
 
             return await SelectById<SetupWebDto>(SetupWebScripts.SelectByIdSetupWeb(), parameters);
         }
@@ -23,9 +23,19 @@ namespace Data.Repository
         public async Task<int> InsertAsync(SetupWebEntity entity)
         {
             var parameters = new DynamicParameters();
+            parameters.Add("@IdConfiguracao", entity.IdConfiguracao);
+            parameters.Add("@NomeDoSite", entity.NomeDoSite);
+            parameters.Add("@EnderecoDoSite", entity.EnderecoDoSite);
+            parameters.Add("@ImagemDoIcone", entity.ImagemDoIcone);
+            parameters.Add("@TextoMensagemPermissao", entity.TextoMensagemPermissao);
+            parameters.Add("@TextoBotaoPermitir", entity.TextoBotaoPermitir);
+            parameters.Add("@TextoBotaoNegar", entity.TextoBotaoNegar);
+            parameters.Add("@TituloNotificacaoBoasVindas", entity.TituloNotificacaoBoasVindas);
+            parameters.Add("@TextoMensagemBoasVindas", entity.TextoMensagemBoasVindas);
+            parameters.Add("@HabilitarLinkDestino", entity.HabilitarLinkDestino);
+            parameters.Add("@EnderecoLinkDestino", entity.EnderecoLinkDestino);
 
-
-            return await InsertAndGetIdAsync(SetupWebScripts.InsertSetupWeb(), entity);
+            return await InsertAndGetIdAsync(SetupWebScripts.InsertSetupWeb(), parameters);
         }
     }
 }

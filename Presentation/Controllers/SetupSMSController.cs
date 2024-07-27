@@ -5,8 +5,8 @@ using System.Net;
 
 namespace Presentation.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class SetupSMSController : ControllerBase
     {
         private ISetupSMSService _setupSMSService;
@@ -16,7 +16,7 @@ namespace Presentation.Controllers
             _setupSMSService = SetupSMSService;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<ActionResult> ObterSetupSMSPorId(int id)
         {
             try
@@ -29,7 +29,7 @@ namespace Presentation.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Post")]
         public async Task<ActionResult> CadastrarSetupSMS(SetupSMSDto SetupSMS)
         {
             try

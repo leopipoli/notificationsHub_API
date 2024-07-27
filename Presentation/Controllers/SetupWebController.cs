@@ -3,12 +3,12 @@ using Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace Apresentacao.Controllers
+namespace Presentation.Controllers
 {
-  [ApiController]
-  [Route("api/[controller]")]
-  public class SetupWebController : ControllerBase
-  {
+    [ApiController]
+    [Route("api/[controller]")]
+    public class SetupWebController : ControllerBase
+    {
         private ISetupWebService _setupWebService;
 
         public SetupWebController(ISetupWebService SetupWebService)
@@ -16,12 +16,12 @@ namespace Apresentacao.Controllers
             _setupWebService = SetupWebService;
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult> ObterSetupWebPorId(int id)
+        [HttpGet("GetById/{idConfiguracao}")]
+        public async Task<ActionResult> ObterSetupWebPorId(int idConfiguracao)
         {
             try
             {
-                return Ok(await _setupWebService.GetById(id));
+                return Ok(await _setupWebService.GetById(idConfiguracao));
             }
             catch (ArgumentException ex)
             {
@@ -29,7 +29,7 @@ namespace Apresentacao.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Post")]
         public async Task<ActionResult> CadastrarSetupWeb(SetupWebDto SetupWeb)
         {
             try

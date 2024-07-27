@@ -3,12 +3,12 @@ using Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace Apresentacao.Controllers
+namespace Presentation.Controllers
 {
-  [ApiController]
-  [Route("[controller]")]
-  public class SetupEmailController : ControllerBase
-  {
+    [ApiController]
+    [Route("api/[controller]")]
+    public class SetupEmailController : ControllerBase
+    {
         private ISetupEmailService _setupEmailService;
 
         public SetupEmailController(ISetupEmailService setupEmailService) 
@@ -16,7 +16,7 @@ namespace Apresentacao.Controllers
             _setupEmailService = setupEmailService;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<ActionResult> ObterSetupEmailPorId(int id)
         {
             try
@@ -29,7 +29,7 @@ namespace Apresentacao.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Post")]
         public async Task<ActionResult> CadastrarSetupEmail(SetupEmailDto setupEmail)
         {
             try

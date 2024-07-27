@@ -19,9 +19,9 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public async Task<SetupWebDto> GetById(int id)
+        public async Task<SetupWebDto> GetById(int idConfiguracao)
         {
-            return await _setupWebRepository.SelectById(id);
+            return await _setupWebRepository.SelectById(idConfiguracao);
         }
 
         public async Task<int> Post(SetupWebDto setupWebDto)

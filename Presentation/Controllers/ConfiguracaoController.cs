@@ -3,7 +3,7 @@ using Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace Apresentacao.Controllers
+namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -16,7 +16,7 @@ namespace Apresentacao.Controllers
             _configuracaoService = configuracaoService;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<ActionResult> ObterTodasConfiguracoes()
         {
             try
@@ -29,7 +29,7 @@ namespace Apresentacao.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<ActionResult> ObterConfiguracaoPorId(int id)
         {
             try
@@ -42,7 +42,7 @@ namespace Apresentacao.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Post")]
         public async Task<ActionResult> CadastrarConfiguracao(ConfiguracaoDto configuracao)
         {
             try

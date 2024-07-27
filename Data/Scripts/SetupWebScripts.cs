@@ -5,13 +5,15 @@
         const string _selectByIdSetupWeb = @"SELECT IdSetupWeb, IdConfiguracao, NomeDoSite, EnderecoDoSite, ImagemDoIcone, TextoMensagemPermissao, TextoBotaoPermitir,
                                                     TextoBotaoNegar, TituloNotificacaoBoasVindas, TextoMensagemBoasVindas, HabilitarLinkDestino, EnderecoLinkDestino 
                                              FROM SetupWeb
-                                             WHERE IdSetupWeb = @id";
+                                             WHERE IdConfiguracao = @idConfiguracao";
 
-        const string _insertSetupWeb = @"INSERT INTO SetupWeb (IdSetupWeb, IdConfiguracao, NomeDoSite, EnderecoDoSite, ImagemDoIcone, TextoMensagemPermissao,
+        const string _insertSetupWeb = @"INSERT INTO SetupWeb (IdConfiguracao, NomeDoSite, EnderecoDoSite, ImagemDoIcone, TextoMensagemPermissao,
                                                                TextoBotaoPermitir, TextoBotaoNegar, TituloNotificacaoBoasVindas, TextoMensagemBoasVindas, HabilitarLinkDestino, EnderecoLinkDestino) 
-                                         VALUES (@IdSetupWeb, @IdConfiguracao, @NomeDoSite, @EnderecoDoSite, @ImagemDoIcone, @TextoMensagemPermissao,
+                                         VALUES (@IdConfiguracao, @NomeDoSite, @EnderecoDoSite, @ImagemDoIcone, @TextoMensagemPermissao,
                                                  @TextoBotaoPermitir, @TextoBotaoNegar, @TituloNotificacaoBoasVindas, @TextoMensagemBoasVindas,
-                                                 @HabilitarLinkDestino, @EnderecoLinkDestino)";
+                                                 @HabilitarLinkDestino, @EnderecoLinkDestino);
+                                         SELECT CAST(SCOPE_IDENTITY() as int);";
+
         public static string SelectByIdSetupWeb() { return _selectByIdSetupWeb; }
         public static string InsertSetupWeb() { return _insertSetupWeb; }
     }
