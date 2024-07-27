@@ -4,7 +4,7 @@ namespace Domain.Interfaces.Services
 {
     public interface ISetupSMSService
     {
-        Task<SetupSMSDto> GetById(int id);
+        Task<SetupSMSDto> GetById(int idConfiguraca);
         Task<int> Post(SetupSMSDto user);
     }
 }

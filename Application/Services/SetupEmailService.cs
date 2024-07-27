@@ -19,9 +19,9 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public async Task<SetupEmailDto> GetById(int id)
+        public async Task<SetupEmailDto> GetById(int idConfiguracao)
         {
-            return await _setupEmailRepository.SelectById(id);
+            return await _setupEmailRepository.SelectById(idConfiguracao);
         }
 
         public async Task<int> Post(SetupEmailDto setupEmailDto)

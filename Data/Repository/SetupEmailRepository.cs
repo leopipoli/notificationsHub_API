@@ -12,10 +12,10 @@ namespace Data.Repository
         {
         }
 
-        public async Task<SetupEmailDto> SelectById(int id)
+        public async Task<SetupEmailDto> SelectById(int idConfiguracao)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@id", id);
+            parameters.Add("@idConfiguracao", idConfiguracao);
 
             return await SelectById<SetupEmailDto>(SetupEmailScripts.SelectByIdSetupEmail(), parameters);
         }

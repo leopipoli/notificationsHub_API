@@ -2,10 +2,15 @@
 {
     public static class SetupSMSScripts
     {
-        const string _selectByIdSetupSMS = @"";
+        const string _selectByIdConfiguracao = @"SELECT IdSetupSMS, IdConfiguracao, ProvedorSMS, Login, Senha
+                                                 FROM SetupSMS
+                                                 WHERE IdConfiguracao = @idConfiguracao";
 
-        const string _insertSetupSMS = @"";
-        public static string SelectByIdSetupSMS() { return _selectByIdSetupSMS; }
-        public static string InsertSetupSMS() { return _insertSetupSMS; }
+        const string _insertSetupSms = @"INSERT INTO SetupSMS (IdConfiguracao, ProvedorSMS, Login, Senha)
+                                         VALUES (@IdConfiguracao, @ProvedorSMS, @Login, @Senha);
+                                         SELECT CAST(SCOPE_IDENTITY() as int);";
+
+        public static string SelectByIdConfiguracao() { return _selectByIdConfiguracao; }
+        public static string InsertSetupSMS() { return _insertSetupSms; }
     }
 }

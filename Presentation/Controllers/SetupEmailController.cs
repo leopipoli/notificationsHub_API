@@ -16,12 +16,12 @@ namespace Presentation.Controllers
             _setupEmailService = setupEmailService;
         }
 
-        [HttpGet("GetById/{id}")]
-        public async Task<ActionResult> ObterSetupEmailPorId(int id)
+        [HttpGet("GetById/{idConfiguracao}")]
+        public async Task<ActionResult> ObterSetupEmailPorId(int idConfiguracao)
         {
             try
             {
-                return Ok(await _setupEmailService.GetById(id));
+                return Ok(await _setupEmailService.GetById(idConfiguracao));
             }
             catch (ArgumentException ex)
             {

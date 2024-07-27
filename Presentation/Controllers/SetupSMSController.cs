@@ -16,12 +16,12 @@ namespace Presentation.Controllers
             _setupSMSService = SetupSMSService;
         }
 
-        [HttpGet("GetById/{id}")]
-        public async Task<ActionResult> ObterSetupSMSPorId(int id)
+        [HttpGet("GetById/{idConfiguracao}")]
+        public async Task<ActionResult> ObterSetupSMSPorId(int idConfiguracao)
         {
             try
             {
-                return Ok(await _setupSMSService.GetById(id));
+                return Ok(await _setupSMSService.GetById(idConfiguracao));
             }
             catch (ArgumentException ex)
             {

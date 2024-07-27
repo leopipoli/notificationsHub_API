@@ -19,9 +19,9 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public async Task<SetupSMSDto> GetById(int id)
+        public async Task<SetupSMSDto> GetById(int idConfiguracao)
         {
-            return await _setupSMSRepository.SelectById(id);
+            return await _setupSMSRepository.SelectById(idConfiguracao);
         }
 
         public async Task<int> Post(SetupSMSDto setupSMSDto)

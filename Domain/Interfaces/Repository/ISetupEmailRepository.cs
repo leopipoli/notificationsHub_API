@@ -5,7 +5,7 @@ namespace Domain.Interfaces.Repository
 {
     public interface ISetupEmailRepository
     {
-        Task<SetupEmailDto> SelectById(int id);
+        Task<SetupEmailDto> SelectById(int IdConfiguracao);
         Task<int> InsertAsync(SetupEmailEntity entity);
     }
 }

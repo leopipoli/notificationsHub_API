@@ -4,7 +4,7 @@ namespace Domain.Interfaces.Services
 {
     public interface ISetupEmailService
     {
-        Task<SetupEmailDto> GetById(int id);
+        Task<SetupEmailDto> GetById(int idConfiguraca);
         Task<int> Post(SetupEmailDto user);
     }
 }

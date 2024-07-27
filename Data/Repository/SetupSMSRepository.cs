@@ -12,18 +12,22 @@ namespace Data.Repository
         {
         }
 
-        public async Task<SetupSMSDto> SelectById(int id)
+        public async Task<SetupSMSDto> SelectById(int IdConfiguracao)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@id", id);
+            parameters.Add("@IdConfiguracao", IdConfiguracao);
 
-            return await SelectById<SetupSMSDto>(SetupSMSScripts.SelectByIdSetupSMS(), parameters);
+            return await SelectById<SetupSMSDto>(SetupSMSScripts.SelectByIdConfiguracao(), parameters);
         }
 
         public async Task<int> InsertAsync(SetupSMSEntity entity)
         {
             var parameters = new DynamicParameters();
 
+            parameters.Add("@IdConfiguracao", entity.IdConfiguracao);
+            parameters.Add("@ProvedorSMS", entity.ProvedorSMS);
+            parameters.Add("@Login", entity.Login);
+            parameters.Add("@Senha", entity.Senha);
 
             return await InsertAndGetIdAsync(SetupSMSScripts.InsertSetupSMS(), entity);
         }

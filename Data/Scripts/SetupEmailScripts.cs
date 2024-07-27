@@ -5,7 +5,8 @@
         const string _selectByIdSetupEmail = @"SELECT 
 	                                               IdSetupEmail, IdConfiguracao, NomeServidorSMTP, PortaEnvio, Login, Senha, NomeRemetente, EmailRemetente 
                                                FROM 
-	                                               SetupEmail";
+	                                               SetupEmail
+                                               WHERE IdConfiguracao = @idConfiguracao";
 
         const string _insertSetupEmail = @"INSERT INTO SetupEmail 
                                               (IdConfiguracao, NomeServidorSMTP, PortaEnvio, Login, Senha, NomeRemetente, EmailRemetente)
