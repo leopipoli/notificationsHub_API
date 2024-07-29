@@ -7,11 +7,5 @@ A aplicação é uma plataforma web para o cadastro de notificações. Ela possu
 O aplicativo permite o cadastro de notificações por outras aplicações para ser consumido. Nesta primeira etapa do projeto, foram desenvolvidas as etapas de cadastro, sem contemplar imagens e arquivos. Em evoluções futuras, desenvolveremos de forma incremental outras funcionalidades e validações.
 
 ## Tecnologias
-- Angular 18
-- Angular Material 18
 - C#
 - Dapper
-
-## Contato
-Leonardo Pipoli  
-[leonardo.pipoli48@gmail.com](mailto:leonardo.pipoli48@gmail.com)
