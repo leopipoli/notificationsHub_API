@@ -7,17 +7,17 @@ The application is a web platform for managing notifications. It features variou
 The application allows notifications to be registered by other applications for consumption. In this initial phase of the project, the registration steps were developed without support for images and files. In future iterations, we will incrementally develop additional features and validations.
 
 ## Technologies
-C#
-ASP.NET Core with .NET 8.0
-Dapper
-Automapper
-Swagger
-.NET 8.0
-Visual Studio 2022 or VS Code
+- C#
+- ASP.NET Core with .NET 8.0
+- Dapper
+- Automapper
+- Swagger
+- .NET 8.0
+- Visual Studio 2022 or VS Code
 
 ## Additional Project Details and Architecture
-Monolithic service
-Layered architecture with DDD
+- Monolithic service
+- Layered architecture with DDD
 
 ## Error Handling
 404 Not Found: Returned when a task is not found.
