@@ -1,18 +1,18 @@
-# Aplicação denominada NotificationsHub
+# NotificationsHub
 
-## Descrição
-A aplicação é uma plataforma web para o cadastro de notificações. Ela possui várias abas para o cadastro de cada tipo de notificação (e-mail, SMS e web). Cada uma dessas abas é liberada apenas quando o item correspondente é selecionado no cadastro da aplicação que irá consumir o NotificationsHub.
+## Description
+The application is a web platform for managing notifications. It features various tabs for registering each type of notification (email, SMS, and web). Each tab is made available only when the corresponding item is selected in the registration of the application that will consume NotificationsHub.
 
-## Recursos
-O aplicativo permite o cadastro de notificações por outras aplicações para ser consumido. Nesta primeira etapa do projeto, foram desenvolvidas as etapas de cadastro, sem contemplar imagens e arquivos. Em evoluções futuras, desenvolveremos de forma incremental outras funcionalidades e validações.
+## Features
+The application allows notifications to be registered by other applications for consumption. In this initial phase of the project, the registration steps were developed without support for images and files. In future iterations, we will incrementally develop additional features and validations.
 
-## Tecnologias
+## Technologies
 - C#
-- ASP.NET Core com .NET 8.0
+- ASP.NET Core with .NET 8.0
 - Dapper
 - Automapper
-- Swaggger
+- Swagger
 
-## Detalhes Adicionais do Projeto e Arquitetura
-- Serviço monolítico
-- Arquitetura em camadas com DDD
+## Additional Project Details and Architecture
+- Monolithic service
+- Layered architecture with DDD
