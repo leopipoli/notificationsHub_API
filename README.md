@@ -8,4 +8,10 @@ O aplicativo permite o cadastro de notificações por outras aplicações para s
 
 ## Tecnologias
 - C#
+- ASP.NET Core com .NET 8.0
 - Dapper
+- Automapper
+- Swaggger
+
+## Arquitetura
+- Serviço monolítico com DDD
