@@ -13,5 +13,6 @@ O aplicativo permite o cadastro de notificações por outras aplicações para s
 - Automapper
 - Swaggger
 
-## Arquitetura
-- Serviço monolítico com DDD
+## Detalhes Adicionais do Projeto e Arquitetura
+- Serviço monolítico
+- Arquitetura em camadas com DDD
